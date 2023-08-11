@@ -26,9 +26,9 @@ class MarketService
 
     /**
      * Obtains the list of products from the API
-     * @return stdClass|string
+     * @return \App\Traits\stdClass|string
      */
-    public function getProducts(): stdClass|string
+    public function getProducts()
     {
         return $this->makeRequest('GET', 'products');
     }
@@ -37,7 +37,7 @@ class MarketService
      * Obtains the list of products from the API
      * @return stdClass
      */
-    public function getProduct($id): stdClass
+    public function getProduct($id)
     {
         return $this->makeRequest('GET', "products/{$id}");
     }
@@ -46,7 +46,7 @@ class MarketService
      * Obtains the list of categories from the API
      * @return stdClass
      */
-    public function getCategories(): stdClass
+    public function getCategories()
     {
         return $this->makeRequest('GET', 'categories');
     }
@@ -55,16 +55,16 @@ class MarketService
      * Obtains the list of items for a category from the API
      * @return stdClass
      */
-    public function getCategoryProducts($id): stdClass
+    public function getCategoryProducts($id)
     {
         return $this->makeRequest('GET', "categories/{$id}/products");
     }
 
     /**
      * Retrieve the user information from the API
-     * @return stdClass
+     * @return \stdClass
      */
-    public function getUserInformation(): stdClass
+    public function getUserInformation()
     {
         return $this->makeRequest('GET', 'users/me');
     }
